@@ -55,4 +55,10 @@ docker_yum_gpg_key: "{{ docker_repo_url }}/centos/gpg"
 docker_users: []
 
 # Docker daemon options as a dict
-docker_daemon_options: {}
+docker_daemon_options: {
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "10m",
+    "max-file": "4"
+  }
+}
